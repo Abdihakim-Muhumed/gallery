@@ -45,3 +45,28 @@ class Photos(models.Model):
 
     def _str_(self):
         return self.name
+
+    @classmethod
+    def search_by_category(cls, category):
+        photos = cls.objects.filter(category_name_icontains=category)
+        return photos
+
+    @classmethod
+    def update_photo(cls, id, value):
+        cls.objects.filter(id=id).update(image=value)
+
+    @classmethod
+    def get_photo_by_id(cls, id):
+        photo = cls.objects.filter(id=id).all()
+        return photo
+
+    @classmethod
+    def filter_by_location(cls, location):
+        photo = Photos.objects.filter(location__name=location).all()
+        return photo
+
+    def save_photo(self):
+        self.save()
+
+    def delete_photo(self):
+        self.delete()
