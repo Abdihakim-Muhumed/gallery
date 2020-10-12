@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if title %}
-  <title>Gallery - {{title}}</title>
-  {% else %}
+    <title>Gallery - {{title}}</title>
+    {% else %}
     <title> Gallery</title>
-  {% endif %}
+    {% endif %}
 
     {% block styles%}
         {%bootstrap_css%}
@@ -19,7 +19,7 @@
     {% block content%}
     {% endblock content%}
     {% block scripts%}
-        {% include 'bootstrap_javascript%}
+        {% bootstrap_javascript%}
     {% endblock scripts%}
 </body>
 </html>
