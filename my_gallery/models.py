@@ -2,31 +2,33 @@ from django.db import models
 
 # Create your models here.
 class Category(models.Model):
-    name = models.CharField(max_length =30)
-    def _str_(self):
+    name = models.CharField(max_length = 30)
+
+    def __str__(self):
         return self.name
     @classmethod
-    def update(cls, pk, category):
+    def update_category(cls, pk, category):
         cls.objects.filter(pk=pk).update(name=category)
 
-    def save(self):
+    def save_category(self):
          self.save()
 
-    def delete(self):
+    def delete_category(self):
         self.delete()
+
 class Location(models.Model):
     name = models.CharField(max_length =30)
     def _str_(self):
         return self.name
     
-    def save(self):
+    def save_location(self):
         self.save()
 
-    def delete(self):
+    def delete_location(self):
         self.delete()
 
     @classmethod
-    def update(cls, pk, location):
+    def update_location(cls, pk, location):
         cls.objects.filter(pk=pk).update(name=location)
 
     @classmethod
@@ -43,6 +45,8 @@ class Photos(models.Model):
     location = models.ManyToManyField(Location)
     image = models.ImageField(upload_to='Photos/')
 
+    class Meta:
+        ordering = ['name',]
     def _str_(self):
         return self.name
 
