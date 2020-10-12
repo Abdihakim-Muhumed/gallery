@@ -5,6 +5,15 @@ class Category(models.Model):
     name = models.CharField(max_length =30)
     def _str_(self):
         return self.name
+    @classmethod
+    def update(cls, pk, category):
+        cls.objects.filter(pk=pk).update(name=category)
+
+    def save(self):
+         self.save()
+
+    def delete(self):
+        self.delete()
 class Location(models.Model):
     name = models.CharField(max_length =30)
     def _str_(self):
