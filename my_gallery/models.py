@@ -5,3 +5,7 @@ class Category(models.Model):
     name = models.CharField(max_length =30)
     def _str_(self):
         return self.name
+class Location(models.Model):
+    name = models.CharField(max_length =30)
+    def _str_(self):
+        return self.name
