@@ -15,6 +15,7 @@ class Photos(models.Model):
     description = models.CharField(max_length =150)
     category = models.ManyToManyField(Category)
     location = models.ManyToManyField(Location)
+    image = models.ImageField(upload_to='Photos/')
 
     def _str_(self):
         return self.name
