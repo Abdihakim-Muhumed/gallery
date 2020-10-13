@@ -2,10 +2,8 @@
 {% block content%}
 {{ block.super}}
 <div class="container">
-    <h1 class="text-center">Welcome to My Gallery</h1>
+    <h1 class="text-center">{{photo.name}}</h1>
     <div class="row">
-        <h2>All Photos</h2>
-        {% for photo in photos%}
         <div class="col-md-3">
             <a href="">
                 <div class="jumbotron">
@@ -14,11 +12,13 @@
                             <h4>{{photo.name}}</h4>
                             <img src="{{photo.photo_image.url}}"  class="img-responsive" alt="image">
                         </div>
+                        <div class="card-footer">
+                            <p>{{photo.description}}</p>
+                        </div>
                     </div>
                 </div>
             </a>
         </div>
-        {% endfor%}
     </div>
 </div>
 

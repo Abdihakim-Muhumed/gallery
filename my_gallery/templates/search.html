@@ -2,10 +2,9 @@
 {% block content%}
 {{ block.super}}
 <div class="container">
-    <h1 class="text-center">Welcome to My Gallery</h1>
+    <h1 class="text-center">{{message}}</h1>
     <div class="row">
-        <h2>All Photos</h2>
-        {% for photo in photos%}
+        {% for photo in searched_photos%}
         <div class="col-md-3">
             <a href="">
                 <div class="jumbotron">
