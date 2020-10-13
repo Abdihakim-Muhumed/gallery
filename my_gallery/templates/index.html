@@ -3,20 +3,22 @@
 {{ block.super}}
 <div class="container">
     <h1 class="text-center">Welcome to My Gallery</h1>
-    <div class="row">
+    <div class='container-fluid d-flex flex-wrap justify-content-center'>
         <h2>All Photos</h2>
-        {% for photo in photos%}
-        <div class="col-md-3">
-            <a href="{% url 'photo' photo.id %}">               
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{{photo.photo_image.url}}"  class="img-responsive img-fluid" alt="image">
+        <div class="row">
+            {% for photo in photos%}
+            <div>
+                <a href="{% url 'photo' photo.id %}">               
+                    <div class="card col-lg-3 col-md-4 m-2 p-2 shadow-sm" height = '350'>
+                        <img src="{{photo.photo_image.url}}" class="card-img-top img-responsive" alt="{{photo.name}}" height='350' width='350' >
+                        
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
+            {% endfor%}
         </div>
-        {% endfor%}
     </div>
+    
 </div>
 
 {% endblock content%}
