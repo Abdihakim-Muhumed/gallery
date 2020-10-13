@@ -18,5 +18,5 @@ from django.urls import path
 from django.conf.urls import url,include
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('', include('my_gallery.urls'))
+    path('', include('my_gallery.urls'))
 ]

@@ -7,3 +7,10 @@ body{
 h2{
     color: whitesmoke;
 }
+.card{
+    margin: 10px;
+}
+img{
+    height: auto;
+    width: max-content;
+}

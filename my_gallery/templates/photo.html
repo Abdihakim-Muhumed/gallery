@@ -2,24 +2,17 @@
 {% block content%}
 {{ block.super}}
 <div class="container">
-    <h1 class="text-center">{{photo.name}}</h1>
     <div class="row">
-        <div class="col-md-3">
-            <a href="">
-                <div class="jumbotron">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4>{{photo.name}}</h4>
-                            <img src="{{photo.photo_image.url}}"  class="img-responsive" alt="image">
-                        </div>
-                        <div class="card-footer">
-                            <p>{{photo.description}}</p>
-                        </div>
-                    </div>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <img src="{{photo.photo_image.url}}"  class="rounded img-fluid rounded img-responsive" alt="image">
                 </div>
-            </a>
+                <div class="card-footer">
+                    <p>{{photo.description}}</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
 {% endblock content%}

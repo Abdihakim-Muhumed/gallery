@@ -7,13 +7,10 @@
         <h2>All Photos</h2>
         {% for photo in photos%}
         <div class="col-md-3">
-            <a href="">
-                <div class="jumbotron">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4>{{photo.name}}</h4>
-                            <img src="{{photo.photo_image.url}}"  class="img-responsive" alt="image">
-                        </div>
+            <a href="{% url 'photo' photo.id %}">               
+                <div class="card">
+                    <div class="card-body">
+                        <img src="{{photo.photo_image.url}}"  class="img-responsive img-fluid" alt="image">
                     </div>
                 </div>
             </a>
