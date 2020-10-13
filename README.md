@@ -4,7 +4,7 @@
 This is a web application that will be showing my gallery. You can access all my personal photos from this website.
 # Setup Instructions:
 
-Click this link to access the gallery : 
+Click this link to access the gallery : https://best-gallery.herokuapp.com/
 # Technologies
  1.Python(django)
  2.HTML
