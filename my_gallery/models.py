@@ -1,5 +1,5 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length = 30)
@@ -43,7 +43,7 @@ class Photos(models.Model):
     description = models.CharField(max_length =150)
     category = models.ManyToManyField(Category)
     location = models.ManyToManyField(Location)
-    photo_image = models.ImageField(upload_to='photos/')
+    image = CloudinaryField('image')
 
     class Meta:
         ordering = ['name',]

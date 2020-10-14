@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
 import dj_database_url
 from decouple import config,Csv
 MODE=config("MODE", default="dev")
@@ -72,6 +73,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -170,10 +172,16 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # configuring the location for media
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Configure Django App for Heroku.
 import django_on_heroku
 django_on_heroku.settings(locals())
 
+#cloudinary configurations
+cloudinary.config( 
+  cloud_name = "dtsnishtq", 
+  api_key = "226321379432761", 
+  api_secret = "8eMM8GUVO0KyLvItExPXrHWBvRg" 
+)
