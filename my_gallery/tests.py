@@ -68,8 +68,8 @@ class TestPhotos(TestCase):
         self.newImage = Photos(name = 'First image',description = 'This is the first image.')
 
         self.newImage.save_photo()
-        self.newImage.categorytags.add(self.newCategory)
-        self.newImage.locationtags.add(self.newLocation)
+        self.newImage.category.add(self.newCategory)
+        self.newImage.location.add(self.newLocation)
 
     def tearDown(self):
         Photos.objects.all().delete()

@@ -7,10 +7,8 @@ body{
 h2{
     color: whitesmoke;
 }
-.card{
-    margin: 10px;
-}
-img{
-    height: auto;
-    width: max-content;
+.page-footer{
+    background-color:cyan ;
+    font-size: medium;
+    color: #003049;
 }
